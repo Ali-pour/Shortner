@@ -10,8 +10,8 @@ class Full_link(models.Model):
 
 
 class Short_link(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    full_id = models.ForeignKey(Full_link, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    full = models.ForeignKey(Full_link, on_delete=models.CASCADE)
     short_link = models.CharField(max_length=6)
 
     def __str__(self):
